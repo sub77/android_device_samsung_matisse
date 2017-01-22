@@ -1,0 +1,26 @@
+From c93c76d6108b7e885428c0acee1040ff115beced Mon Sep 17 00:00:00 2001
+From: sub77 <sub77@ymail.com>
+Date: Fri, 30 Sep 2016 00:44:36 +0000
+Subject: [PATCH 5/5] Set Samsung NavBar
+
+Change-Id: I7b7db7b1050cc43de128a2572f7b7f371ec5ee9e
+---
+ gui/theme/portrait_hdpi/ui.xml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/gui/theme/portrait_hdpi/ui.xml b/gui/theme/portrait_hdpi/ui.xml
+index a5ee22c..f195f6c 100644
+--- a/gui/theme/portrait_hdpi/ui.xml
++++ b/gui/theme/portrait_hdpi/ui.xml
+@@ -71,7 +71,7 @@
+ 	</resources>
+ 
+ 	<variables>
+-		<variable name="tw_samsung_navbar" value="0" persist="1"/>
++		<variable name="tw_samsung_navbar" value="1" persist="1"/>
+ 
+ 		<variable name="tw_hide_kb" value="0"/>
+ 		<variable name="screen_width" value="1080"/>
+-- 
+2.1.4
+

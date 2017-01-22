@@ -1,0 +1,26 @@
+From 2b0e606ceb1098c515044f0514b324fc38f183c1 Mon Sep 17 00:00:00 2001
+From: sub77 <sub77@ymail.com>
+Date: Fri, 30 Sep 2016 00:43:23 +0000
+Subject: [PATCH 3/5] Set Military Time
+
+Change-Id: I789fcd49a36ecc0a5306890533d9f25908ee7f31
+---
+ data.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data.cpp b/data.cpp
+index dc36ada..f5a74db 100644
+--- a/data.cpp
++++ b/data.cpp
+@@ -707,7 +707,7 @@ void DataManager::SetDefaultValues()
+ 	mData.SetValue("tw_terminal_state", "0");
+ 	mData.SetValue("tw_background_thread_running", "0");
+ 	mData.SetValue(TW_RESTORE_FILE_DATE, "0");
+-	mPersist.SetValue("tw_military_time", "0");
++	mPersist.SetValue("tw_military_time", "1");
+ #ifdef TW_NO_SCREEN_TIMEOUT
+ 	mConst.SetValue("tw_screen_timeout_secs", "0");
+ 	mConst.SetValue("tw_no_screen_timeout", "1");
+-- 
+2.1.4
+

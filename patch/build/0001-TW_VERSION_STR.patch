@@ -1,0 +1,27 @@
+From 545c6dadedc652fcc73c094a6253f80298e480de Mon Sep 17 00:00:00 2001
+From: sub77 <sub77@ymail.com>
+Date: Fri, 2 Dec 2016 03:59:32 +0000
+Subject: [PATCH] TW_VERSION_STR
+
+Change-Id: I8699fee5ca0a71f28b8345131371e79d089eb2e2
+---
+ core/dumpvar.mk | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/core/dumpvar.mk b/core/dumpvar.mk
+index 1bd4777..a97c2ab 100644
+--- a/core/dumpvar.mk
++++ b/core/dumpvar.mk
+@@ -120,4 +120,9 @@ $(info ============================================)
+ $(foreach v, $(print_build_config_vars),\
+   $(info $v=$($(v))))
+ $(info ============================================)
++# TW Version
++ifeq ($(TW_DEVICE_SPECIFIC_VERSION),)
++else
++$(info   TW_VERSION_STR=$(TW_DEVICE_SPECIFIC_VERSION))
++endif
+ endif
+-- 
+2.1.4
+

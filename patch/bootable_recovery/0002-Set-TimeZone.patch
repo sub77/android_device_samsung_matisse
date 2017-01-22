@@ -1,0 +1,35 @@
+From 640404ecdb47f92cc40b0c2073dae4a790e8ff6d Mon Sep 17 00:00:00 2001
+From: sub77 <sub77@ymail.com>
+Date: Fri, 30 Sep 2016 00:42:58 +0000
+Subject: [PATCH 2/5] Set TimeZone
+
+Change-Id: I19f9aec57f409b6bc26bc3bd1cde7b90854561ee
+---
+ data.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/data.cpp b/data.cpp
+index 7755701..dc36ada 100644
+--- a/data.cpp
++++ b/data.cpp
+@@ -682,7 +682,7 @@ void DataManager::SetDefaultValues()
+ 	mPersist.SetValue(TW_FORCE_MD5_CHECK_VAR, "0");
+ 	mPersist.SetValue(TW_DISABLE_FREE_SPACE_VAR, "0");
+ 	mPersist.SetValue(TW_USE_COMPRESSION_VAR, "0");
+-	mPersist.SetValue(TW_TIME_ZONE_VAR, "CST6CDT,M3.2.0,M11.1.0");
++	mPersist.SetValue(TW_TIME_ZONE_VAR, "CET-1;CEST,M3.5.0,M10.5.0");
+ 	mPersist.SetValue(TW_GUI_SORT_ORDER, "1");
+ 	mPersist.SetValue(TW_RM_RF_VAR, "0");
+ 	mPersist.SetValue(TW_SKIP_MD5_CHECK_VAR, "0");
+@@ -690,7 +690,7 @@ void DataManager::SetDefaultValues()
+ 	mPersist.SetValue(TW_SDEXT_SIZE, "0");
+ 	mPersist.SetValue(TW_SWAP_SIZE, "0");
+ 	mPersist.SetValue(TW_SDPART_FILE_SYSTEM, "ext3");
+-	mPersist.SetValue(TW_TIME_ZONE_GUISEL, "CST6;CDT,M3.2.0,M11.1.0");
++	mPersist.SetValue(TW_TIME_ZONE_GUISEL, "CET-1;CEST,M3.5.0,M10.5.0");
+ 	mPersist.SetValue(TW_TIME_ZONE_GUIOFFSET, "0");
+ 	mPersist.SetValue(TW_TIME_ZONE_GUIDST, "1");
+ 	mData.SetValue(TW_ACTION_BUSY, "0");
+-- 
+2.1.4
+

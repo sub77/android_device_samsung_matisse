@@ -1,0 +1,30 @@
+From 27ad7b7781d8590d47e07142fd5daa0e841f2801 Mon Sep 17 00:00:00 2001
+From: sub77 <sub77@ymail.com>
+Date: Fri, 30 Sep 2016 00:44:03 +0000
+Subject: [PATCH 4/5] Set Vibration off
+
+Change-Id: I84dd9e868fca258b3b63dd9825549e78b220867a
+---
+ data.cpp | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/data.cpp b/data.cpp
+index f5a74db..fb8e20c 100644
+--- a/data.cpp
++++ b/data.cpp
+@@ -530,9 +530,9 @@ void DataManager::SetDefaultValues()
+ 	mConst.SetValue("false", "0");
+ 
+ 	mConst.SetValue(TW_VERSION_VAR, TW_VERSION_STR);
+-	mPersist.SetValue("tw_button_vibrate", "80");
+-	mPersist.SetValue("tw_keyboard_vibrate", "40");
+-	mPersist.SetValue("tw_action_vibrate", "160");
++	mPersist.SetValue("tw_button_vibrate", "0");
++	mPersist.SetValue("tw_keyboard_vibrate", "0");
++	mPersist.SetValue("tw_action_vibrate", "0");
+ 
+ 	TWPartition *store = PartitionManager.Get_Default_Storage_Partition();
+ 	if(store)
+-- 
+2.1.4
+

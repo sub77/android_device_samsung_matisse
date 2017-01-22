@@ -1,0 +1,26 @@
+From a8e46bb09334380ed722764a8863fe801a6abcc9 Mon Sep 17 00:00:00 2001
+From: sub77 <darfpunk@gmx.de>
+Date: Wed, 28 Dec 2016 17:05:30 +0000
+Subject: [PATCH] Add matisse
+
+Signed-off-by: sub77 <darfpunk@gmx.de>
+---
+ kexec/arch/arm/mach-shamu.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/kexec/arch/arm/mach-shamu.c b/kexec/arch/arm/mach-shamu.c
+index d1fb092..81ae567 100644
+--- a/kexec/arch/arm/mach-shamu.c
++++ b/kexec/arch/arm/mach-shamu.c
+@@ -210,7 +210,7 @@ exit:
+ }
+ 
+ const struct arm_mach arm_mach_shamu = {
+-    .boardnames = { "shamu", NULL },
++    .boardnames = { "shamu", "matissewifi", "matisse3g", "matisselte", NULL },
+     .choose_dtb = shamu_choose_dtb,
+     .add_extra_regs = shamu_add_extra_regs,
+ };
+-- 
+2.1.4
+

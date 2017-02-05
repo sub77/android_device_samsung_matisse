@@ -1,13 +1,9 @@
 LOCAL_PATH := $(call my-dir)
 
 LZMA_BIN := $(shell which lzma)
-
-ifdef TW_VERSION
+ifneq ($(TARGET_RECOVERY_IS_MULTIROM),true)
 RECOVERY_IMG := $(PRODUCT_OUT)/twrp-$(TW_VERSION)_$(TARGET_DEVICE).img
 RECOVERY_TAR := $(PRODUCT_OUT)/twrp-$(TW_VERSION)_$(TARGET_DEVICE).tar
-else
-RECOVERY_IMG := $(PRODUCT_OUT)/recovery.img
-RECOVERY_TAR := $(PRODUCT_OUT)/recovery.tar
 endif
 
 ifndef TARGET_PREBUILT_KERNEL
@@ -51,7 +47,9 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(INSTALLED_DTIMAGE_TARGET) $(re
 	$(hide) echo -n "SEANDROIDENFORCE" >> $(INSTALLED_RECOVERYIMAGE_TARGET)
 	$(hide) $(call assert-max-image-size,$@,$(BOARD_RECOVERYIMAGE_PARTITION_SIZE),raw)
 	$(hide) tar -C $(PRODUCT_OUT) -H ustar -c recovery.img > $(PRODUCT_OUT)/recovery.tar
+ifneq ($(TARGET_RECOVERY_IS_MULTIROM),true)
 	$(hide) mv $(PRODUCT_OUT)/recovery.img $(RECOVERY_IMG)
 	$(hide) mv $(PRODUCT_OUT)/recovery.tar $(RECOVERY_TAR)
 	@echo -e ${CL_CYN}"Made Odin flashable recovery tar: $(RECOVERY_TAR)"${CL_RST}
 	@echo -e ${CL_CYN}"Made flashable recovery image   : $(RECOVERY_IMG)"${CL_RST}
+endif

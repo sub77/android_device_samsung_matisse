@@ -1,4 +1,12 @@
-include device/samsung/matisse/recovery/TW_DEVICE_VERSION.mk
+# MultiROM
+TARGET_RECOVERY_IS_MULTIROM := true
+ifeq ($(TARGET_RECOVERY_IS_MULTIROM),true)
+include device/samsung/matisse/multirom/BoardConfigMultirom.mk
+include vendor/extra/vcontrol/MR_REC_VERSION.mk
+ifeq ($(MR_REC_VERSION),)
+MR_REC_VERSION := $(shell date +%Y%m%d)-01
+else ifeq ($(TARGET_RECOVERY_IS_MULTIROM),)
+include vendor/extra/vc/TW_DEVICE_VERSION.mk
 ifeq ($(TW_DEVICE_VERSION),)
 TW_DEVICE_VERSION := 1
 endif
@@ -36,13 +44,6 @@ TARGET_KERNEL_SOURCE := kernel/samsung/msm8226
 TARGET_KERNEL_CONFIG := msm8226-sec_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissetwrp_defconfig
 TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
-endif
-
-# MultiROM
-TARGET_RECOVERY_IS_MULTIROM := true
-
-ifeq ($(TARGET_RECOVERY_IS_MULTIROM),true)
-include device/samsung/matisse/multirom/BoardConfigMultirom.mk
 endif
 
 # Partitions

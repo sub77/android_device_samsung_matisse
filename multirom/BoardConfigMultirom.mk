@@ -4,8 +4,6 @@ ifeq ($(MR_REC_VERSION),)
 MR_REC_VERSION := $(shell date +%Y%m%d)-01
 endif
 
-RECOVERY_VARIANT := mr
-
 MR_DEVICE_SPECIFIC_VERSION := g
 
 BOARD_MKBOOTIMG_ARGS += --board mrom$(MR_REC_VERSION)

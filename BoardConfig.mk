@@ -1,6 +1,6 @@
-include device/samsung/matisse/recovery/TW_REC_VERSION.mk
-ifeq ($(TW_REC_VERSION),)
-TW_REC_VERSION := 01
+include device/samsung/matisse/recovery/TW_DEVICE_VERSION.mk
+ifeq ($(TW_DEVICE_VERSION),)
+TW_DEVICE_VERSION := 1
 endif
 
 # Architecture

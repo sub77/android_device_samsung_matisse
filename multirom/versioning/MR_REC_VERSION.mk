@@ -16,9 +16,9 @@ endif
 #sub commands
 cmd_put_out      := printf "%s-%02d" $$build_date $$build_num >$(MR_REC_BUILD_NUMBER_FILE);
 cmd_get_out      := build_str=`cat $(MR_REC_BUILD_NUMBER_FILE)`; build_date=$${build_str:0:8}; build_num=$${build_str:9:2};
-cmd_reset_ver    := echo -ne "\nMR_REC_VERSION.mk: New date, reset build number to 01\n\n" 1>&2; build_date=`date -u +%Y%m%d`; build_num=1;
+cmd_reset_ver    := echo -ne "\nMR_REC_VERSION.mk: New date, reset build number to 01\n\n" 1>&2; build_date=`date +%Y%m%d`; build_num=1;
 cmd_incr_num     := build_num=$$(( 10\#$$build_num + 1 )); if [ $$build_num -gt 99 ]; then echo -ne "\nMR_REC_VERSION.mk: ERROR: Build number will exceed 99 resetting to 01\n\n" 1>&2; build_num=1; fi;
-cmd_is_new_date  := `date -u +%Y%m%d` -gt $$build_date
+cmd_is_new_date  := `date +%Y%m%d` -gt $$build_date
 
 #run on envsetup and/or any make
 cmd_pre_run  := if [ ! -f $(MR_REC_BUILD_NUMBER_FILE) ]; then

@@ -53,6 +53,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # TWRP specific build flags
+TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_THEME := portrait_hdpi
 TW_HAS_LANDSCAPE := true
 RECOVERY_SDCARD_ON_DATA := true

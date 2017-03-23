@@ -1,0 +1,2 @@
+resize; TERMINFO=/etc/terminfo TERM=screen /sbin/nano.bin $*;
+

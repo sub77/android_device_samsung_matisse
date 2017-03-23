@@ -1,0 +1,8 @@
+[
+  {
+    "repository" : "sub77/android_kernel_samsung_msm8226",
+    "target_path": "kernel/samsung/msm8226",
+    "revision"   : "twrp-6.0",
+    "remote"     : "github"
+  }
+]
